@@ -13,6 +13,10 @@
 .transall {
   @apply transition-all duration-100 ease-in-out;
 }
+.clicked {
+  @apply cursor-pointer active:scale-90;
+}
+
 @keyframes pingku {
   75%,
   100% {

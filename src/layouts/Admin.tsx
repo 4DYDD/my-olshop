@@ -10,7 +10,7 @@ const Admin: React.FC<AdminProps> = ({ children, ...props }) => {
   return (
     <>
       {/*  Sidebar */}
-      <div className="flexc max-h-screen font-inter">
+      <div className="max-h-screen flexc font-inter">
         <Sidebar />
 
         {/* Mainbar */}
