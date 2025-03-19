@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function NavOptions() {
   return (
     <>
-      <div className="h-12 gap-3 w-52 flexc">
+      <div className="h-full gap-3 w-52 flexc">
         <div className="text-xl clicked">
           <FontAwesomeIcon icon={faBell} />
         </div>

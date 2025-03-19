@@ -12,7 +12,7 @@ interface AdminProps {
   children?: ReactNode;
 }
 
-const Sidebar: React.FC<AdminProps> = ({ children }) => {
+const Sidebar: React.FC<AdminProps> = () => {
   return (
     <>
       <div className="border-r-gray-300 border-r shadow-md shadow-gray-400 h-screen w-52 flexc flex-col !justify-start py-10">

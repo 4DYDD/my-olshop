@@ -1,0 +1,124 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Storage API",
+    "description": "Endpoint ini digunakan untuk mengelola penyimpanan data. Anda dapat mengambil, menambahkan, memperbarui, atau menghapus data penyimpanan.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/storage": {
+      "get": {
+        "summary": "Mengambil data penyimpanan",
+        "description": "Mengambil data penyimpanan.",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Jumlah maksimum data yang akan diambil (opsional).",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data penyimpanan berhasil diambil.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "price": {
+                        "type": "number"
+                      },
+                      "category": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "summary": "Contoh respons sukses",
+                    "value": [
+                      {
+                        "id": "1",
+                        "name": "Item 1",
+                        "price": 100,
+                        "category": ["Category 1", "Category 2"]
+                      },
+                      {
+                        "id": "2",
+                        "name": "Item 2",
+                        "price": 200,
+                        "category": ["Category 3"]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Parameter permintaan tidak valid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "summary": "Contoh respons gagal",
+                    "value": {
+                      "error": "Parameter 'limit' harus berupa integer."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Data penyimpanan tidak ditemukan.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "summary": "Contoh respons kesalahan",
+                    "value": {
+                      "error": "Data penyimpanan tidak ditemukan."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
