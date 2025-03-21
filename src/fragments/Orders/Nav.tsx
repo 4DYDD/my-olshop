@@ -6,7 +6,7 @@ function Nav() {
     <>
       <nav className="w-[95rem] h-[5rem] flexc">
         <ul className="flexc flex-[1] h-full">
-          <li className="bg-teal-600 min-h-[2rem] flexc flex-[3]">s</li>
+          <li className="min-h-[2rem] flexc flex-[3]"></li>
           <li className="h-[3rem] flexc flex-[1]">
             {/* <Autocomplete
               size="medium"
@@ -43,7 +43,7 @@ function Nav() {
 
             <Dropdown />
           </li>
-          <li className="flex-[1]">
+          <li className="flex-[1] h-[3rem]">
             <InputSearch />
           </li>
         </ul>

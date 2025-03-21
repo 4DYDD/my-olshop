@@ -3,6 +3,7 @@ import { FC, Fragment } from "react";
 import OrderRow from "./OrderRow";
 import { Order } from "../../data/fakeOrders";
 import Card from "../../elements/Card";
+import { toCurrency } from "../../utils/toCurrency";
 
 interface OrderListProps {
   orders: Array<Order>;
@@ -26,7 +27,7 @@ const OrderList: FC<OrderListProps> = ({ orders }) => {
         ) => {
           return (
             <Fragment key={`${index}-orders-${customer.id}`}>
-              <Card className="shadow-md shadow-gray-300">
+              <Card className="shadow shadow-gray-300">
                 <div className="p-5 w-[30rem]">
                   {/*  */}
 
@@ -46,7 +47,10 @@ const OrderList: FC<OrderListProps> = ({ orders }) => {
                   <OrderRow label={`order status`} value={orderStatus} />
 
                   {/* TOTAL PRICE */}
-                  <OrderRow label={`total price`} value={totalPrice} />
+                  <OrderRow
+                    label={`total price`}
+                    value={toCurrency(totalPrice, "id-ID")}
+                  />
 
                   {/* PAYMENT METHOD */}
                   <OrderRow label={`payment method`} value={paymentMethod} />
@@ -58,21 +62,20 @@ const OrderList: FC<OrderListProps> = ({ orders }) => {
                     <Button
                       variant="contained"
                       color="info"
-                      className="!font-semibold !font-inter !capitalize !rounded-md !transition-all !ease-in-out !duration-200 active:scale-95 !bg-sky-500"
+                      className="!font-semibold !font-inter !capitalize !rounded-md !transition-all !ease-in-out !duration-200 active:scale-95 !bg-teal-500"
                     >
                       Detail
                     </Button>
                     <Button
                       variant="contained"
                       color="success"
-                      className="!font-semibold !font-inter !capitalize !rounded-md !transition-all !ease-in-out !duration-200 active:scale-95 !bg-green-600"
+                      className="!font-semibold !font-inter !capitalize !rounded-md !transition-all !ease-in-out !duration-200 active:scale-95 !bg-teal-600"
                     >
                       Accept
                     </Button>
                     <Button
                       variant="contained"
-                      color="error"
-                      className="!font-semibold !font-inter !capitalize !rounded-md !transition-all !ease-in-out !duration-200 active:scale-95"
+                      className="!font-semibold !font-inter !capitalize !rounded-md !transition-all !ease-in-out !duration-200 active:scale-95 !bg-teal-800"
                     >
                       Cancel
                     </Button>
