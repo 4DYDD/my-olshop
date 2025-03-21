@@ -1,6 +1,5 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
 function InputSearch() {
   return (
@@ -21,7 +20,7 @@ function InputSearch() {
             </span>
           </span>
           <input
-            className="relative w-full ps-[3.5rem] ring-0 outline-none px-2 min-h-[3rem] border border-gray-300 rounded shadow shadow-gray-300"
+            className="relative w-full ps-[3.5rem] ring-0 outline-none px-2 min-h-[3rem] border border-gray-300 rounded shadow shadow-gray-300 text-gray-600 text-[0.9rem]"
             type="search"
             name="search"
             id="search"

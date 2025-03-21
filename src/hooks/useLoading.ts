@@ -8,7 +8,7 @@ function useLoading(duration: number) {
     return () => clearTimeout(timer);
   }, [duration]);
 
-  return isLoading;
+  return [isLoading, setIsLoading];
 }
 
 export { useLoading };
